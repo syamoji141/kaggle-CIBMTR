@@ -1,0 +1,7 @@
+name: transformer
+params:
+  d_model: 32
+  nhead: 2
+  num_layers: 2
+  dropout: 0.1
+  multi_output: true

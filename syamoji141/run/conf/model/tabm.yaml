@@ -1,0 +1,10 @@
+name: tabm
+params:
+  type: MLP
+  n_blocks: 3
+  d_block: 512
+  dropout: 0.1
+  d_embedding: 64
+  arch_type: tabm-mini
+  k: 32
+  multi_output: false

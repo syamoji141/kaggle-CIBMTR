@@ -1,0 +1,17 @@
+hydra:
+  job:
+    name: prepare_data
+  run:
+    dir: ${dir.output_dir}/${hydra.job.name}
+defaults:
+  - _self_
+  - dir: local
+
+exp_name: exp_test
+phase: train
+encoder: label_encoder
+repeats: 3
+folds: 10
+fold_type: v2
+batch_size: 32768
+target_type: chris

@@ -1,0 +1,23 @@
+#prepare_data.yaml
+hydra:
+  job:
+    name: prepare_data
+  
+run: 
+  dir: ${dir.output_dir}/${hydra.job.name}
+
+defaults:
+  - _self_
+  - dir: local
+
+phase: train
+
+penalizer: 0.1
+
+note: biya
+
+exp_name: "exp_torchsort"  
+model_dump: True     
+model_dump_dir: "./model"
+sc_loss_weight: 1.0
+

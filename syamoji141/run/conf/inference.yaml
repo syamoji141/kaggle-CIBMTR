@@ -1,0 +1,21 @@
+hydra:
+  job:
+    name: inference
+  run:
+    dir: ${dir.output_dir}/${hydra.job.name}
+defaults:
+  - _self_
+  - dir: local
+  - dataset: dataset
+  - model: mlp
+
+
+exp_name: exp001
+debug: true
+phase: test
+target_col: y
+
+seed: 42
+folds: 10
+n_repeats: 1
+use_amp: true

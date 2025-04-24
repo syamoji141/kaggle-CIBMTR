@@ -1,0 +1,5 @@
+data_dir: ~/kaggle/CIBMTR/syamoji141/data
+processed_dir: processed_data
+output_dir: output
+model_dir: model
+sub_dir: ./

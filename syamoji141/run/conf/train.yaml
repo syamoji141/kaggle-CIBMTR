@@ -1,0 +1,45 @@
+hydra:
+  job:
+    name: train
+  run:
+    dir: ${dir.output_dir}/${hydra.job.name}
+defaults:
+  - _self_
+  - dir: local
+  - dataset: dataset
+  - model: mlp
+
+
+exp_name: exp001
+debug: true
+phase: train
+target_col: y
+
+seed: 42
+folds: 10
+n_repeats: 1
+loss: mse # mse, cox
+offline: false
+
+alpha_1: 0.5
+alpha_2: 0.5
+
+repeat_interleave: false
+
+trainer:
+  epochs: 20
+  accelerator: auto
+  use_amp: true
+  gradient_clip_val: 1.0
+  accumulate_grad_batches: 1
+  monitor: val_loss
+  monitor_mode: min
+  check_val_every_n_epoch: 1
+  patience: 5
+
+optimizer:
+  lr: 0.01
+  weight_decay: 1e-3
+
+scheduler:
+  num_warmup_steps: 0
